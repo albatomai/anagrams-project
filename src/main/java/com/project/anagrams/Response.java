@@ -1,11 +1,9 @@
 package com.project.anagrams;
 
-import jakarta.persistence.Entity;
-
 
 class Response {
 
-
+    ;
     private Boolean isAnagram;
 
 
@@ -14,11 +12,11 @@ class Response {
     }
 
 
-    public Boolean getAnagram() {
+    public Boolean getIsAnagram() {
         return isAnagram;
     }
 
-    public void setAnagram(Boolean anagram) {
+    public void setIsAnagram(Boolean anagram) {
         isAnagram = anagram;
     }
 }

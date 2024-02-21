@@ -21,7 +21,6 @@ public class Service {
 	HashSet<String> getAnagramList(String str) {
 		// Check if there are any anagrams stored.
 		if (!anagrams.isEmpty()) {
-			System.out.print("anagramsOf.keySet(): " + anagrams.keySet());
 			// Iterate through stored anagrams.
 			for (String key : anagrams.keySet()) {
 				// Check if the current key is an anagram of the input string.
@@ -34,11 +33,12 @@ public class Service {
 		}
 		// Remove the input string from the set (itself cannot be its own anagram).
 		anagramSet.remove(str);
+		log.info("anagrams of {} are {}",str, anagramSet);
 		return anagramSet;
 	}
 
 	// Method to save anagrams.
-	boolean saveAnagram(String str1, String str2) {
+	Response saveAnagram(String str1, String str2) {
 		// Log input strings.
 		log.info("input strings : {}, {}", str1, str2);
 		// Check if the input strings are anagrams.
@@ -46,7 +46,7 @@ public class Service {
 		// If they are anagrams, save them.
 		if (result) {
 			// Save the anagrams.
-
+			//if no anagram of the input words is already present add a new element in the map
 			if (anagrams.isEmpty()|| !(isAnagramSaved(str1) || isAnagramSaved(str2))) {
 				anagrams.putValueList(str1, str2);
 			}
@@ -62,7 +62,7 @@ public class Service {
 		}
 		// Log the updated anagrams.
 		log.info("Anagrams : {}", anagrams.toString());
-		return result;
+		return new Response(result);
 	}
 
 	// Method to check if the anagram was already saved

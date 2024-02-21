@@ -1,0 +1,82 @@
+{
+	"info": {
+		"_postman_id": "9b4b91be-0cd0-42ac-b145-e41d90ec70ac",
+		"name": "anagrams",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4397266"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/anagrams",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"a\": \"toro\",\r\n    \"b\": \"roto\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/anagrams",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"anagrams"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/anagrams/alba",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"a\": \"alba\",\r\n\"b\":\"abal\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/anagrams/alba",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"anagrams",
+						"alba"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

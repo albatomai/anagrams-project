@@ -16,7 +16,7 @@ class Controller {
 
     // Endpoint to save anagrams.
     @PostMapping("/anagrams")
-    ResponseEntity<Boolean> newAnagrams(@RequestBody Request request) {
+    ResponseEntity<Response> newAnagrams(@RequestBody Request request) {
 
         validateRequest(request);
         return ResponseEntity.ok(service.saveAnagram(request.getA(), request.getB()));
